@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.807,=C:\Users\ф\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.986,F:\!\proj2019\cubten\Unit7panel.pas=F:\!\proj2019\cubten\Unit8panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.503,C:\Users\ф\Documents\Embarcadero\Studio\Projects\Unit1.dfm=F:\!\proj2019\cubten\Unit1panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.503,C:\Users\ф\Documents\Embarcadero\Studio\Projects\Unit1.pas=F:\!\proj2019\cubten\Unit1panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.575,F:\!\proj2019\cubten\Panel9.dproj=F:\!\proj2019\cubten\Panel8.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.632,F:\!\proj2019\cubten\Unit9panel.pas=F:\!\proj2019\cubten\Unit8panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.273,F:\!\proj2019\cubten\Unit6panel.pas=F:\!\proj2019\cubten\Unit5panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,F:\!\proj2019\cubten\Unit6panel.pas=F:\!\proj2019\cubten\Unit7panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.197,F:\!\proj2019\cubten\Unit6panel.dfm=F:\!\proj2019\cubten\Unit7panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.273,F:\!\proj2019\cubten\Unit6panel.dfm=F:\!\proj2019\cubten\Unit5panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.520,F:\!\proj2019\cubten\Unit1panel.pas=F:\!\proj2019\cubten\Unit2panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.998,F:\!\proj2019\cubten\Unit7panel.dfm=F:\!\proj2019\cubten\Unit8panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.938,C:\Users\ф\Documents\Embarcadero\Studio\Projects\Project1.dproj=F:\!\proj2019\cubten\Panel1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.657,F:\!\proj2019\cubten\Unit4panel.dfm=F:\!\proj2019\cubten\Unit5panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,F:\!\proj2019\cubten\Unit3panel.dfm=F:\!\proj2019\cubten\Unit2panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.303,F:\!\proj2019\cubten\Unit3panel.dfm=F:\!\proj2019\cubten\Unit4panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.806,F:\!\proj2019\cubten\Unit3panel.pas=F:\!\proj2019\cubten\Unit2panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.303,F:\!\proj2019\cubten\Unit3panel.pas=F:\!\proj2019\cubten\Unit4panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.644,F:\!\proj2019\cubten\Unit9panel.dfm=F:\!\proj2019\cubten\Unit8panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.643,F:\!\proj2019\cubten\Panel1.dproj=F:\!\proj2019\cubten\Panel2.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.599,F:\!\proj2019\cubten\Panel6.dproj=F:\!\proj2019\cubten\Panel7.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.520,F:\!\proj2019\cubten\Unit1panel.dfm=F:\!\proj2019\cubten\Unit2panel.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.592,F:\!\proj2019\cubten\Unit4panel.pas=F:\!\proj2019\cubten\Unit5panel.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.162,F:\!\proj2019\cubten\Panel6.dproj=F:\!\proj2019\cubten\Panel5.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.452,F:\!\proj2019\cubten\Panel4.dproj=F:\!\proj2019\cubten\Panel5.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.980,F:\!\proj2019\cubten\Panel7.dproj=F:\!\proj2019\cubten\Panel8.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.410,F:\!\proj2019\cubten\Panel3.dproj=F:\!\proj2019\cubten\Panel4.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.132,F:\!\proj2019\cubten\Panel3.dproj=F:\!\proj2019\cubten\Panel2.dproj</Transaction>
+    <Transaction>2019.10.12 10:05:28.889,F:\!\proj2019\cubten\Unit1sobirator.dfm=F:\!\proj2019\cubten\Unit9panel.dfm</Transaction>
+    <Transaction>2019.10.12 10:05:28.889,F:\!\proj2019\cubten\Unit1sobirator.pas=F:\!\proj2019\cubten\Unit9panel.pas</Transaction>
+    <Transaction>2019.10.12 10:05:51.653,F:\!\proj2019\cubten\sobirator1.dproj=F:\!\proj2019\cubten\Panel9.dproj</Transaction>
+    <Transaction>2019.10.12 12:13:56.269,F:\!\proj2019\cubtenia\Unit1sobirator.pas=F:\!\proj2019\cubten\Unit1sobirator.pas</Transaction>
+    <Transaction>2019.10.12 12:13:56.269,F:\!\proj2019\cubtenia\Unit1sobirator.dfm=F:\!\proj2019\cubten\Unit1sobirator.dfm</Transaction>
+    <Transaction>2019.10.12 12:14:08.832,F:\!\proj2019\cubtenia\sobirator1.dproj=F:\!\proj2019\cubten\sobirator1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
