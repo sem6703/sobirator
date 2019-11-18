@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   BiDiMode = bdLeftToRight
   Caption = #1047#1072#1083#1077#1081' '#1101#1090#1086
-  ClientHeight = 310
-  ClientWidth = 587
+  ClientHeight = 377
+  ClientWidth = 630
   Color = 5275647
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -19,8 +19,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Image2: TImage
-    Left = 419
-    Top = 24
+    Left = 187
+    Top = 248
     Width = 84
     Height = 69
     OnMouseDown = Image2MouseDown
@@ -28,8 +28,8 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 291
-    Width = 587
+    Top = 358
+    Width = 630
     Height = 19
     Panels = <
       item
@@ -53,28 +53,49 @@ object Form1: TForm1
       item
         Width = 50
       end>
+    ExplicitTop = 457
+    ExplicitWidth = 702
   end
   object Button1: TButton
-    Left = 453
-    Top = 248
-    Width = 75
+    Left = 438
+    Top = 272
+    Width = 147
     Height = 25
     Caption = 'Go!'
     TabOrder = 1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 368
-    Top = 248
+    Left = 333
+    Top = 272
     Width = 75
     Height = 25
     Caption = 'clear'
     TabOrder = 2
     OnClick = Button2Click
   end
+  object RadioGroup1: TRadioGroup
+    Left = 296
+    Top = 8
+    Width = 81
+    Height = 105
+    ItemIndex = 0
+    Items.Strings = (
+      #1079#1072#1083#1080#1074#1082#1072
+      #1087#1086#1074#1086#1088#1086#1090)
+    TabOrder = 3
+  end
   object MainMenu1: TMainMenu
     Left = 152
     Top = 176
+    object Open1: TMenuItem
+      Caption = 'Open'
+      OnClick = Open1Click
+    end
+    object Undo1: TMenuItem
+      Caption = 'Undo'
+      OnClick = Undo1Click
+    end
     object Here1: TMenuItem
       Caption = 'Here'
       OnClick = Here1Click
@@ -82,6 +103,12 @@ object Form1: TForm1
   end
   object ColorDialog1: TColorDialog
     Left = 240
+    Top = 176
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = '*.bmp|*.bmp'
+    InitialDir = '.'
+    Left = 64
     Top = 176
   end
 end

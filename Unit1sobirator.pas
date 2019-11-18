@@ -16,6 +16,10 @@ type
     MainMenu1: TMainMenu;
     Here1: TMenuItem;
     ColorDialog1: TColorDialog;
+    Open1: TMenuItem;
+    OpenDialog1: TOpenDialog;
+    Undo1: TMenuItem;
+    RadioGroup1: TRadioGroup;
     procedure FormCreate(Sender: TObject);
     procedure Image2MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
@@ -24,6 +28,8 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Here1Click(Sender: TObject);
+    procedure Open1Click(Sender: TObject);
+    procedure Undo1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,9 +66,11 @@ const ManyQ: array[0..2]of Quadrigez4=( // группы четверок базовых слоев????????
     ((0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0))));
 const fact: array[0..12]of longword=(1,1,2, 6, 24, 120, 720, 5040, 40320, 362880,
 3628800, 39916800, 479001600); // факториалы
+
+type deyey=record a,b: tcolor; p: tpoint end;
 var
   Form1: TForm1;
-  bm,bim,rex: tbitmap;
+  bm,map,rex: tbitmap;
   pp: pd; // база ходов
 
   c0b: cb2=  // обнуленный куб
@@ -98,6 +106,7 @@ var
 (x:181;y: 42)
   );
 only: boolean=true;
+dey: deyey;
 
 implementation
 
@@ -351,6 +360,14 @@ end;
 
 
 
+
+procedure TForm1.Undo1Click(Sender: TObject);
+begin
+with image2.canvas do begin
+  brush.Color:=dey.a;
+  floodfill(dey.p.x,dey.p.y, dey.b, fsSurface);
+end;
+end;
 
 procedure ppp; // таблица сложности ходов
 var t: TResourceStream;
@@ -724,6 +741,22 @@ form1.StatusBar1.Panels[4].Text:=way[i];
 end;
 
 
+procedure mapot;
+var i,j,k: integer; stop_color: tcolor;
+begin
+stop_color:=clblack;
+with map.Canvas do
+  for i:=0 to 6 do// := Low to High do
+    begin
+      brush.Color:=rgb(9,9,i);
+      floodfill(aj[3*i+0].X,aj[3*i+0].y, stop_color, fsBorder);
+      floodfill(aj[3*i+1].X,aj[3*i+1].y, stop_color, fsBorder);
+      floodfill(aj[3*i+2].X,aj[3*i+2].y, stop_color, fsBorder);
+    end;
+end;
+///   floodfill(aj[].X,aj[].y, stop_color, fsBorder);
+
+
 procedure TForm1.FormCreate(Sender: TObject);
 var i: integer; s: string;
 begin
@@ -734,7 +767,29 @@ for i:=0 to 4 do statusbar1.panels[i].width:=56;//85;
  statusbar1.panels[4].width:=300;
 bm.LoadFromFile('fire8.bmp');
 bm.Width:=290;
-image2.Align:=alclient;
+map.Assign(bm);
+mapot;
+
+
+
+image2.picture.LoadFromFile('fire9.bmp');
+//image2.Align:=alclient;
+with image2 do
+  begin
+  left:=0; top:=0;
+  width:=form1.ClientWidth;
+  height:=form1.ClientHeight;
+  end;
+with image2.Canvas do
+  begin
+  width:=image2.Width;
+  height:=image2.Height;
+  brush.Color:=clred;
+  fillrect(rect(0,0,702,470));
+  pen.Width:=14;
+  pen.Color:=clblue;
+  moveto(0,0);lineto(702,470);
+  end;
 image2.picture.LoadFromFile('fire9.bmp');
 form1.Color:=rgb(255,127,80);
 abbat; // сосканировал цвета с картинки
@@ -743,15 +798,19 @@ end;
 
 procedure TForm1.Image2MouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
-var jertva_color: tcolor;
+var jertva_color,t1,t2,t3,u: tcolor;  i,j,k: integer;
 begin
 if x>400 then
   begin
-
-
     if image2.Canvas.Pixels[x,y]<>rgb(254,254,254) then
       begin
-      if ssleft in shift then image2.canvas.brush.color:=image2.Canvas.Pixels[x,y];
+      if ssleft in shift then
+         begin
+
+
+         image2.canvas.brush.color:=image2.Canvas.Pixels[x,y];
+         end;
+
       if ssright in shift then if colordialog1.execute then with image2.Canvas do
          begin
            brush.Color:=colordialog1.Color;
@@ -761,12 +820,49 @@ if x>400 then
     exit;
   end;
 
+if radiogroup1.ItemIndex=0 then   // заливка
+begin
 jertva_color:=image2.Canvas.Pixels[x,y];// уничтожить цвет
 if jertva_color=rgb(254,254,254) then exit;
 if jertva_color=rgb(0,0,0) then exit;
+with dey do
+  begin
+  p:=point(x,y);
+  a:=jertva_color;
+  b:=image2.canvas.Brush.Color;
+  end;
 
-with image2.canvas do begin
+with image2.canvas do
+  begin
     floodfill(x,y, jertva_color, fsSurface);
+  end;
+end;
+if radiogroup1.ItemIndex=1 then   // поворот
+begin
+  //showmessage('return');
+  with form1.Image2.Canvas do
+    begin
+      jertva_color:=map.Canvas.Pixels[x,y];
+      if jertva_color=rgb(254,254,254) then exit;
+      if jertva_color=rgb(0,0,0) then exit;
+      k:=getbvalue(jertva_color);
+      //statusbar1.Panels[0].Text:=inttostr(k);
+
+      u:=brush.Color;
+      t1:=Pixels[aj[3*k+0].x,aj[3*k+0].y];
+      t2:=Pixels[aj[3*k+1].x,aj[3*k+1].y];
+      t3:=Pixels[aj[3*k+2].x,aj[3*k+2].y];
+      brush.Color:=t1;
+      floodfill(aj[3*k+1].x,aj[3*k+1].y, t2, fsSurface);
+      brush.Color:=t2;
+      floodfill(aj[3*k+2].x,aj[3*k+2].y, t3, fsSurface);
+      brush.Color:=t3;
+      floodfill(aj[3*k+0].x,aj[3*k+0].y, t1, fsSurface);
+      brush.Color:=u;
+    end;
+
+
+
 end;
 end;
 
@@ -779,6 +875,14 @@ statusbar1.Panels[6].Text:=format('y: %d',[y]);
 end;
 
 
+
+procedure TForm1.Open1Click(Sender: TObject);
+begin
+//if NOTSRCCOPY .execute then
+/////
+if not opendialog1.execute then exit;
+rex.loadfromfile(opendialog1.filename); rex.width:=290; image2.canvas.draw(0,0,rex);
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
@@ -814,8 +918,8 @@ end;
 
 
 initialization
-bm:=tbitmap.Create();
+bm:=tbitmap.Create(); rex:=tbitmap.Create(); map:=tbitmap.Create();
 finalization
-bm.Free;
+bm.Free;  rex.Free; map.Free;
 
 end.
